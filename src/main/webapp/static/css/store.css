@@ -1,0 +1,113 @@
+.dream{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    background-color:transparent!important
+}
+#storemain{
+    width: 100%;
+    height: 100%;
+}
+
+#typelistdiv{
+    width: 164px;
+    height: 1000px;
+    margin-left:50px ;
+    margin-top: 50px;
+    overflow: auto;
+    position: fixed;
+}
+
+#typelistdiv .movietype{
+    -webkit-appearance: none;
+    width: 80px;
+    height: 50px;
+    outline: none;
+    border: solid 1px #e5e5e5;
+    border-radius: 3px;
+
+}
+input[type="checkbox"]:checked {
+    background: #e5e5e5;
+}
+.movie-container{
+    width: 80px;
+    height: 50px;
+    float: left;
+}
+
+.movie-container label{
+    font-size: 20px;
+    position: relative;
+    top:-42px;
+    left: 18px;
+    cursor: pointer;
+}
+
+#resetbtn{
+    background: url("../../static/img/icon/reset.png") no-repeat;
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: none;
+    border-radius:32px;
+    margin-left: 55px;
+    margin-top: 12px;
+    outline: none;
+}
+
+/*电影内容获得*/
+#moviecontent{
+    width: 950px;
+    height: 1700px;
+    float: left;
+    margin-left: 250px;
+    overflow: auto;
+    margin-top: 54px;
+    cursor: pointer;
+}
+.onemovie{
+    widows:950px;
+    height: 200px;
+}
+
+.movieposter{
+    width: 150px;
+    height: 200px;
+    float: left;
+    background-size: 100%!important;
+}
+.namedirdet{
+    width: 800px;
+    height: 200px;
+    float: left;
+}
+
+.movienameandirect{
+    width: 800px;
+    height: 50px;
+}
+
+.namedirp{
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 50px;
+}
+.directspan{
+    font-size: 16px;
+    float: right;
+}
+.moviedetails{
+    width: 800px;
+    height: 150px;
+}
+
+.changebtn{
+    background: url("../../static/img/icon/fresh.png") no-repeat;
+    width: 200px;
+    height: 70px;
+    margin-left: 360px;
+    margin-top: 20px;
+}
+.changep{
+    font-size: 26px;
+    margin-left:80px ;
+    line-height: 64px;
+}

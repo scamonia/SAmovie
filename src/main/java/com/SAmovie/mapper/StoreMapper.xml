@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SAmovie.mapper.StoreMapper">
+    <select id="selectBytylist" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie
+        <where>
+           <foreach collection="array" index="index" item="item" open=" " separator="and" close=" ">
+                tag LIKE "%"#{item}"%"
+            </foreach>
+            ORDER BY RAND() LIMIT 8
+        </where>
+    </select>
+    <select id="selectAlltypeMovie" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie
+        WHERE mid >= (SELECT floor( RAND() * ((SELECT MAX(mid) FROM movie)-(SELECT MIN(mid) FROM movie)) + (SELECT MIN(mid) FROM movie)))
+        ORDER BY mid LIMIT 8;
+    </select>
+</mapper>

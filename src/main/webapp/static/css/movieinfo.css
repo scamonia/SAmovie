@@ -1,0 +1,293 @@
+a.dream:hover {
+    background-color: black;
+}
+#liked:hover {
+    border-color: #CCC;
+}
+a:hover.likedactive
+{
+    background-color: pink;
+    color: white;
+    outline: 0 none !important;
+}
+a.likedactive
+{
+    background-color: pink;
+    color: white;
+    outline: 0 none !important;
+}
+
+#sharetext{
+	width: 70px;
+	height: 30px;
+	
+	position: relative;
+	margin: -63px 540px;
+}
+
+
+#play:hover {
+    background-color: white;
+    outline: 0 none !important;
+    color: #00b4ef;
+}
+
+#submitevalutionstar:hover {
+    outline: 0 none !important;
+    background-color: white;
+    color: #00b4ef;
+}
+
+#commentarea{
+    width: 100%;
+    height: 900px;
+    float: left;
+}
+
+#cmtcontent{
+    width: 80%;
+    height: 900px;
+    margin:0 auto;
+}
+#cmttiltle{
+    margin:0 auto;
+    height: 40px;
+    width: 90%;
+    border-bottom: 3px solid black;
+}
+.cmtspan{
+    font-size: 26px;
+    line-height: 37px;
+}
+
+#mycmt{
+    width: 900px;
+    margin:0 auto;
+    padding: 13px 0;
+}
+
+#mycmt .mycmt-ctn{
+    width: 100%;
+    height: 125px;
+    text-align: center;
+}
+
+#mycmt .mycmt-btn{
+    width: 100%;
+    padding-right: 120px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+#cmttext{
+    width: 75%;
+    height: 100%;
+    font-size: 14px;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+    background-color: #f4f5f7;
+    color: #555555;
+    padding: 5px 10px;
+    line-height: normal;
+}
+
+#cmttext:hover{
+    background-color: white;
+    border: 2px solid #00a1d6;
+}
+
+#submycmt{
+    -webkit-appearance: none;
+    width: 60px;
+    height: 34px;
+    background-color: #00b5e5;
+    border-color:#00B5E5 ;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    margin-right: 0px;
+    float: right;
+}
+
+#submycmt:hover{
+    opacity: 0.8;
+}
+
+#usercmt{
+    width: 900px;
+    height: 520px;
+    border-top: solid #e5e5e5 1px;
+    margin: 0 auto;
+}
+#usercontent{
+    width: 900px;
+    height: 520px;
+
+}
+.each-cmt{
+    width: 900px;
+    overflow: auto;
+    border-bottom: 0.5px #e5e5e5 solid ;
+}
+
+.each-cmt:hover{
+    opacity: 0.8;
+    background: #e5e5e5;
+}
+
+.each-cmt .userlogo{
+    width: 100px;
+    height: 100px;
+    float: left;
+
+}
+
+.othernickname{
+    display: block;
+    font-size: 14px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    background-color:transparent!important
+}
+
+.othernickname:hover{
+    opacity: 0.8;
+    color:grey;
+}
+
+.each-cmt .usercmt{
+    width: 800px;
+    height: 100px;
+    float: left;
+
+}
+.cmtword{
+    width: 700px;
+    height: 80px;
+    margin: 0 auto;
+    line-height: 80px;
+    font-size: 14px;
+}
+.cmttime{
+    width: 140px;
+    height: 20px;
+    float: right;
+    text-align: center;
+}
+
+#pageinfo{
+    width: 800px;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 80px;
+    font-size: 16px;
+}
+#pageinfo .disabled{
+    margin-left: 12px;
+}
+#pageinfo .current{
+    margin-left: 12px;
+}
+
+.footer {
+    background-color: black;
+    color: #CCC;
+    font-size: 12px;
+    text-align: center;
+    padding: 35px 0;
+    margin-top: 10%;
+
+}
+.component-poster-detail .nav-tabs > li {
+    width: 33.33% !important;
+}
+
+.qBox legend {
+    margin: 0 4px;
+    padding: 4px;
+    font-weight: bold;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    border-radius: 25px;
+    line-height: 1;
+    vertical-align: text-top;
+    font-size: 12px;
+}
+
+.qBox legend .keyword {
+    display: inline-block;
+    max-width: 30em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.qBox a {
+    color: #333;
+    display: block;
+    float: left;
+    min-width: 100px;
+    line-height: 30px;
+    text-align: center;
+    padding: 4px 8px;
+    margin: 4px;
+    font-size: 12px;
+    border: 1px solid;
+    /* background: rgba(0,0,0,0.04); */
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+.qBox a:hover {
+    font-size: 16px;
+    color: #4b8ccb;
+    background-color: whitesmoke;
+}
+
+/*sa 影单模态框*/
+#Mlistitem{
+    width: 400px;
+    height: 600px;
+    display: none;
+    z-index: 1060;
+    margin-top: -400px;
+    margin-left: 160px;
+    position: fixed;
+    outline: none;
+}
+
+#userMlist{
+    width: 300px;
+    background:white ;
+    position: relative;
+    top:50px;
+    margin-left: 50px;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+/*相似电影*/
+#reviews a{
+    -webkit-tap-highlight-color:#e5e5e5;
+    background-color:transparent!important
+}
+
+#reviews tr{
+    height: 40px;
+}
+#reviews tr:hover{
+    background: #e5e5e5;
+}
+#reviews td{
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.fm-rating{
+    margin-left: 6px;
+}

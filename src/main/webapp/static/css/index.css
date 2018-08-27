@@ -1,0 +1,53 @@
+.dream{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    background-color:transparent!important
+}
+
+#moviecontent{
+    width: 100%;
+    height:92%;
+}
+
+.movieitem{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.movieposter{
+    height: 387.48px;
+    width: 258.19px;
+    background-size: 100%!important;
+}
+.moviename{
+    height: 10%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+.moviecon{
+    height:7.5%;
+    width:100%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 48.42px;
+}
+
+.movieitem:hover{
+    opacity: 0.6;
+}
+
+.movieitem:hover .moviecon{
+    opacity: 0.9;
+    background: ghostwhite;
+}
+
+#refresh{
+    width: 80px;
+    height:80px;
+    float: right;
+    background: url("../../static/img/icon/fresh.png") no-repeat;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}

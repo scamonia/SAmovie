@@ -1,0 +1,211 @@
+.userinfomation{
+	margin-top:40px ;
+	height: 600px;
+
+}
+.infoitem{
+	width: 400px;
+	height: 55px;
+	margin-left: 90px;
+
+}
+
+.itemtitle{
+	font-size: 16px;
+}
+
+.itemvalue{
+	font-size: 16px;
+	float: left;
+}
+
+.intro{
+	width: 400px;
+	height: 120px;
+	margin-left: 90px;
+}
+
+.retitle{
+	font-size: 18px;
+}
+.recontent{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+#gender1{
+	font-size: 18px;
+	margin-left: 10px;
+}
+
+#gender2{
+	margin-left: 10px;
+}
+
+.genderlabel{
+	font-size: 18px;
+	margin-left: 5px;
+}
+
+#getbirthday{
+	height: 26px;
+	width: 186px;
+	margin-left: 10px;
+	border-radius: 3px;
+}
+
+.movielistcontent{
+
+}
+
+.mlistcontent{
+	width: 200px;
+	float: left;
+	border-right: 2px solid black ;
+}
+.listcontent{
+	width: 450px;
+	margin-left: 200px;
+
+}
+#addbtn{
+	margin-left: 0px;
+	margin-top: 0px;
+}
+#addmlist{
+	-webkit-appearance: none;
+	background: url(../../static/img/icon/add.png) 100%;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	margin-left: 45px;
+	margin-top: 15px;
+
+
+}
+.each-listname{
+	padding: 10px 0px;
+	border-bottom:1px solid black;
+}
+
+.each-listname:hover .deletebtn{
+	display: block;
+}
+
+.listname{
+	font-size: 20px;
+	height: 30px;
+	margin-top:10px;
+	text-align: center;
+	cursor: pointer;
+}
+.listname:hover{
+	text-decoration: underline;
+	color: #00a0d8;
+}
+
+.collectlist{
+
+	margin-left: 73px;
+
+}
+
+.creatorname{
+	margin-left: 65px;
+	display: none;
+}
+
+.onemoviecont{
+	border-bottom:1px solid black ;
+}
+.onemoviecont:hover .deletebtn{
+	display: block;
+}
+.amoviecontent{
+	height: 75px;
+	overflow: hidden;
+}
+
+.moviename{
+	height: 40px;
+	padding-left: 20px;
+	font-size: 18px;
+	padding-top: 10px;
+}
+.moviecountry{
+	height: 18px;
+	padding-left: 20px;
+}
+.deletebtn{
+	background: url(../../static/img/icon/del.png) 0px 0px no-repeat;
+	height: 20px;
+	width: 56px;
+	margin-left: 70px;
+	padding-left: 18px;
+	cursor: pointer;
+	display: none;
+}
+.delbtn{
+	background: url(../../static/img/icon/del.png);
+	height: 16px;
+	width: 16px;
+	position: relative;
+	top:2px;
+}
+
+#listnamecontent{
+	margin-bottom: 0px;
+}
+
+#listnamecontent > li:first-child .deletebtn{
+	display:none;
+}
+
+#addMlistArea{
+	width: 600px;
+	height: 400px;
+	display: none;
+	z-index: 1060;
+	position: fixed;
+	margin-top: -350px;
+	margin-left: 200px;
+}
+
+.addMlistdialog{
+	width: 400px;
+	height: 285px;
+	margin-top: 35px;
+	margin-left: 100px;
+	border-radius: 10px;
+	background: white;
+}
+#addMlistbody{
+	width: 400px;
+	height: 160px;
+	border-bottom:1px solid #e5e5e5;
+}
+/*我的评论*/
+#reviews{
+	width: 650px;
+	margin-left: 15px;
+
+}
+
+.reviewcontent{
+	width:550px;
+	margin-left: 50px;
+}
+
+.each-cmt{
+	border-bottom: 1px solid #e5e5e5;
+	overflow: auto;
+}
+.each-cmt:hover .deletebtn{
+	display: block;
+}
+
+.mnametopage{
+	cursor: pointer;
+}
+.Profile-lightItem{
+	cursor: pointer;
+}

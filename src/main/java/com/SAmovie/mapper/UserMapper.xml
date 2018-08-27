@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SAmovie.mapper.UserMapper">
+    <select id="queryUserByname" parameterType="java.lang.String" resultType="com.SAmovie.model.User">
+        SELECT userid,username,password FROM account WHERE username = #{username}
+    </select>
+
+    <select id="selectUsername" parameterType="java.lang.String" resultType="map">
+        SELECT userid FROM account WHERE username = #{username}
+    </select>
+
+    <insert id="insertUser" parameterType="com.SAmovie.model.User">
+        INSERT account VALUES (#{id},#{username},#{pwd})
+    </insert>
+
+    <insert id="insertTypelist" parameterType="com.SAmovie.model.Typelist">
+        INSERT user_typelist VALUES (#{id},#{plot},#{comedy},#{action},#{love},#{adventure},#{animation},#{crime},#{documentary},#{family},#{fantasy},#{history},#{horrible},#{science},#{song},#{suspense},#{youth})
+    </insert>
+
+    <insert id="insertMovielist" parameterType="com.SAmovie.model.MovieList">
+        INSERT INTO movielist(uid,mlname,midlist,mltype,creator) VALUES (#{uid},#{mlname},#{midlist},#{mltype},#{creator})
+    </insert>
+
+    <insert id="insertUserinfo" parameterType="com.SAmovie.model.UserInfo">
+        INSERT INTO userinfo(uid,gender,birthday,intro) VALUES (#{uid},#{gender},#{birthday},#{intro})
+    </insert>
+</mapper>

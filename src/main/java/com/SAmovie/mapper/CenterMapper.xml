@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SAmovie.mapper.CenterMapper">
+    <select id="selectNameByuid" resultType="java.lang.String">
+        SELECT username FROM account WHERE userid = #{uid}
+    </select>
+
+    <select id="selectInfoByuid" resultType="com.SAmovie.model.UserInfo">
+        SELECT * FROM userinfo WHERE uid = #{uid}
+    </select>
+
+    <update id="updateUserinfoByuid">
+        UPDATE userinfo
+        <trim prefix="set" suffixOverrides=",">
+            <if test="gender!=null">gender=#{gender},</if>
+            <if test="birthday!=null">birthday=#{birthday},</if>
+            <if test="introself!=null">intro=#{introself},</if>
+        </trim>
+        WHERE uid=#{uid}
+    </update>
+
+    <select id="selectMlistBycid" resultType="com.SAmovie.model.MovieList">
+        SELECT * FROM movielist WHERE uid=#{cid}
+    </select>
+
+    <select id="selectMoviecontentByMid" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid IN 
+        <foreach collection="array" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <update id="updateMlistByMlid">
+        UPDATE movielist SET midlist=replace(midlist,#{delmovieid},'')
+        WHERE mlid=#{mlid}
+    </update>
+
+    <select id="selectNewMidlist" parameterType="java.lang.Integer" resultType="java.lang.String">
+        SELECT midlist FROM movielist WHERE mlid = #{delmlid}
+    </select>
+
+    <delete id="deleteMlistBymlid">
+        DELETE FROM movielist WHERE mlid = #{mlid}
+    </delete>
+
+    <select id="selectCommentsbycid" resultType="com.SAmovie.model.Comment">
+        SELECT cmtid,movie.mid,movie.name,content,cmtime from movie,comment WHERE comment.uid=#{cid} AND movie.mid=comment.mid
+    </select>
+
+    <delete id="deleteCommentBycmtid">
+        DELETE FROM comment WHERE cmtid=#{cmtid}
+    </delete>
+
+    <update id="updateCmtnumBymid">
+        UPDATE movie SET commentitem = commentitem - 1 WHERE mid = #{mid}
+    </update>
+
+    <select id="selectNowmidlist" resultType="java.lang.String">
+        SELECT midlist FROM movielist WHERE mlid=#{mlid}
+    </select>
+
+    <select id="selectTypelist" resultType="com.SAmovie.model.Typelist">
+        SELECT * FROM user_typelist WHERE typeid = #{tmpid}
+    </select>
+
+    <select id="selectTopdflmovies" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie ORDER BY RAND() limit #{num}
+    </select>
+
+    <select id="selectMovieByTag" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE tag LIKE "%"#{onetag}"%" ORDER BY RAND() LIMIT 1
+    </select>
+
+    <select id="selectlikedMidByUid" resultType="map">
+        SELECT mid FROM scoreinfo WHERE uid=#{tmpid} AND score>= (SELECT AVG(score) FROM scoreinfo WHERE uid=#{tmpid}) ORDER  BY RAND() LIMIT 1
+    </select>
+
+    <select id="selectlikedMovieByTag" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid !=#{likedmid}
+            <foreach collection="taglike" index="index" item="item" open=" and" separator="and" close=" ">
+                tag LIKE "%"#{item}"%"
+            </foreach>
+            ORDER BY score DESC LIMIT 1
+    </select>
+
+    <select id="selectFirstMovieByOnetag" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid != #{mid} AND tag LIKE "%"#{onetag}"%" ORDER BY score DESC LIMIT 1
+    </select>
+
+    <select id="selectotherUserlist" resultType="com.SAmovie.model.MovieList">
+        SELECT * FROM movielist WHERE uid !=#{tmpid} AND midlist LIKE "%"#{likedmid}"%" AND mltype='defaultlike' ORDER BY RAND() LIMIT 1
+    </select>
+
+    <select id="selectThirdMovie" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid NOT IN 
+        <foreach collection="existmid" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <foreach collection="threetag" item="item" index="index" open=" and" separator="and" close="">
+            tag LIKE "%"#{item}"%"
+        </foreach>
+        ORDER BY RAND() limit 1;
+    </select>
+
+    <select id="selectNuidByTypeval" statementType="STATEMENT" resultType="java.lang.String">
+        SELECT typeid FROM user_typelist WHERE ${fourth} > ${nearval} ORDER BY ${fourth} DESC limit 2,1;
+    </select>
+
+    <select id="selectNearList" resultType="com.SAmovie.model.MovieList">
+        SELECT * FROM movielist WHERE uid=#{nid} AND mltype=#{type}
+    </select>
+
+    <select id="selectFivemovie" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid NOT IN
+        <foreach collection="recmid" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ORDER BY RAND() limit 1;
+    </select>
+</mapper>

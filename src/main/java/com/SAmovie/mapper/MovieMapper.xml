@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SAmovie.mapper.MovieMapper">
+    <select id="selectByNameLike" parameterType="java.lang.String" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie
+        <where>
+            <if test="_parameter != null">
+                name LIKE "%"#{moviename}"%"
+            </if>
+        </where>
+        LIMIT 5;
+    </select>
+
+    <select id="selectByMid" parameterType="java.lang.Integer" resultType="com.SAmovie.model.Movie">
+        SELECT * FROM movie WHERE mid = #{mid}
+    </select>
+
+    <select id="selectBylikemid" parameterType="java.lang.String" resultType="map">
+        SELECT mlid FROM movielist WHERE FIND_IN_SET(#{0},midlist) AND uid=#{1} AND mltype='defaultlike'
+    </select>
+
+    <select id="selectByMidandUid" resultType="map">
+        SELECT score FROM scoreinfo WHERE mid=#{param1} AND uid=#{param2}
+    </select>
+
+    <update id="updateUserLikelist">
+        <if test="bool==0">
+            UPDATE movielist SET midlist=replace(midlist,#{mid},'')
+            WHERE uid=#{uid} AND mltype='defaultlike'
+        </if>
+        <if test="bool==1">
+            UPDATE movielist SET midlist=CONCAT(midlist,#{mid})
+            WHERE uid=#{uid} AND mltype='defaultlike'
+        </if>
+    </update>
+
+    <insert id="insertScoreinfo">
+        INSERT INTO scoreinfo(mid,uid,score) VALUES (#{mid},#{uid},#{score})
+    </insert>
+
+    <insert id="insertComment" parameterType="com.SAmovie.model.Comment">
+        INSERT INTO comment(mid,uid,username,content,cmtime) VALUES (#{mid},#{uid},#{username},#{content},#{cmtime})
+    </insert>
+
+    <select id="selectComments" resultType="com.SAmovie.model.Comment">
+        SELECT mid,uid,username,content,cmtime FROM comment WHERE mid=#{0} ORDER BY cmtime DESC LIMIT #{1},#{2}
+    </select>
+
+    <update id="updateCommentitem">
+        UPDATE movie SET commentitem = commentitem + 1 WHERE mid = #{mid}
+    </update>
+
+    <update id="updateMlistcontent">
+        UPDATE movielist SET midlist = #{midlist} WHERE mlid = #{mlid}
+    </update>
+
+    <update id="updateScoreitem">
+        UPDATE movie SET scoreitem = scoreitem + 1 WHERE mid = #{mid}
+    </update>
+
+    <update id="updateUserTypelist" parameterType="com.SAmovie.model.Typelist">
+        UPDATE user_typelist SET
+            plot = plot + #{plot},
+            comedy = comedy + #{comedy},
+            action = action + #{action},
+            love = love + #{love},
+            adventure = adventure + #{adventure},
+            animation = animation + #{animation},
+            crime = crime + #{crime},
+            documentary = documentary + #{documentary},
+            family = family + #{family},
+            fantasy = fantasy + #{fantasy},
+            history = history + #{history},
+            horrible = horrible + #{horrible},
+            science = science + #{science},
+            song = song + #{song},
+            suspense = suspense + #{suspense},
+            youth = youth + #{youth} WHERE typeid = #{id}
+    </update>
+</mapper>

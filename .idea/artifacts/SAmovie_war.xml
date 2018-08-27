@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SAmovie:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/SAmovie_war</output-path>
+    <root id="archive" name="SAmovie_war.war">
+      <element id="artifact" artifact-name="SAmovie:war exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

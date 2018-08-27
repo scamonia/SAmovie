@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height:100%;
+
+}
+
+a{
+    text-decoration: none;
+}
+.dream{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    background-color:transparent!important
+}
+#main{
+    width: 100%;
+    height: 1300px;
+    background: url("../../static/img/icon/titlelogo.png");
+}
+
+#title-line{
+    width: 980px;
+    height: 28px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+#title-line .tit{
+    height: 56px;
+    line-height: 56px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    background: #FFFFFF;
+}
+
+#register-container{
+    width: 980px;
+    height: 1150px;
+    margin: 0 auto;
+}
+
+.center-div{
+    margin-top: 70px;
+    margin-left: 300px;
+    width: 415px;
+    height: 60px;
+    border-radius: 3px;
+    text-align: left;
+}
+.password-div{
+    margin-top: 10px;
+    margin-left: 300px;
+    width: 415px;
+    height: 60px;
+    border-radius: 3px;
+    text-align: left;
+}
+.checkinfo-div{
+    margin-top: 0px;
+    margin-left: 290px;
+    width: 415px;
+    height: 60px;
+    border-radius: 3px;
+    text-align: center;
+}
+#checkinfo{
+    height: 60px;
+    width:425px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#pwdinfo{
+    height: 60px;
+    width:425px;
+    font-size: 20px;
+    line-height: 30px;
+}
+[v-cloak] {
+    display: none;
+}
+
+#username{
+    height: 45px;
+    width: 395px;
+    float: left;
+    border-radius: 10px;
+    padding: 10px;
+    color: #a5a5a5;
+    font-size: 18px;
+}
+
+#pwd{
+    height: 45px;
+    width: 395px;
+    float: left;
+    border-radius: 10px;
+    padding: 10px;
+    color: #a5a5a5;
+    font-size: 18px;
+}
+.center-div .cue{
+    line-height: 30px;
+    font-size: 14px;
+}
+.selecttitle{
+    width: 840px;
+    height:30px;
+    font-size: 24px;
+    margin: 0 auto;
+}
+#typelist{
+    width: 974px;
+    height: 770px;
+    margin: 0 auto;
+}
+.movie-container{
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-left: 76px;
+    margin-top: 30px;
+    border-radius:08px;
+}
+
+/*复选框*/
+#typelist .movietype{
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+    left: 115px;
+    top: -145px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url(../img/icon/beforecheck.png);
+    background-size:100% 100% ;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    outline: none;
+}
+#typelist .movietype:checked{
+    background: url(../img/icon/aftercheck.png);
+    background-size:100% 100% ;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    outline: none;
+}
+/*#typelist .movietype:checked + div:after{
+	opacity: 0.5;
+	border: 1px solid blue;
+}*/
+
+.movie-container span{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 150px;
+    top: -80px;
+    text-shadow: 0 0 5px #000;
+    display: block;
+    z-index: 10;
+    margin: 0 auto;
+    position: relative;
+    outline: none;
+}
+.movie-container .plot{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/plot.jpg);
+    background-size:100% 100% ;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+.movie-container .comedy{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/comedy.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .action{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/action.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .love{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/love.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+/*4.22*/
+.movie-container .adventure{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/adventure.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .animation{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/animation.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .crime{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/crime.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .documentary{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/documentary.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .family{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/family.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .fantasy{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/Fantasy.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .history{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/history.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .horrible{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/horrible.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .science{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/sciencefic.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .song{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/songdance.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .suspense{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/Suspense.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.movie-container .youth{
+    width: 150px;
+    height: 150px;
+    background: url(../img/movietype/youth.jpg);
+    background-size:100% 100% ;
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+#regbtn-div{
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.regbtn{
+    -webkit-appearance: none;
+    width: 265px;
+    height: 60px;
+    background: #00a0da;
+    display: block;
+    margin:0 auto;
+    font-size: 25px;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+}
+
+
+
